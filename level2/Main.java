@@ -20,6 +20,7 @@ public class Main {
         boolean flag = true;
         while (flag) {
             System.out.println("[ SHAKESHACK MENU ]");
+            // 반복문을 활용해 List 안에 있는 MenuItem을 하나씩 출력
             for(int i = 0; i < menuItems.size(); i++){
                 System.out.println((i+1) + ". " + menuItems.get(i).name + " | W " + menuItems.get(i).price + " | " + menuItems.get(i).explain);
             }

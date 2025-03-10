@@ -1,11 +1,11 @@
-package level2;
+package level3;
 
 public class MenuItem {
-    public String name;
+    String name;
     double price;
     String explain;
 
-    public MenuItem(String name, double price, String explain){
+    MenuItem(String name, double price, String explain){
         this.name = name;
         this.price = price;
         this.explain = explain;
