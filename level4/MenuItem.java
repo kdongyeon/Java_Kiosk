@@ -1,9 +1,9 @@
 package level4;
 
 public class MenuItem {
-    String name;
-    double price;
-    String explain;
+    private String name;
+    private double price;
+    private String explain;
 
     MenuItem(String name, double price, String explain){
         this.name = name;
@@ -11,5 +11,15 @@ public class MenuItem {
         this.explain = explain;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public String getExplain() {
+        return explain;
+    }
 }
