@@ -30,7 +30,7 @@ public class Menu {
                     menuItems.add(new MenuItem("Cheese Stick", 2.0, "모짜렐라 치즈가 쭉쭉 늘어나요"));
                     menuItems.add(new MenuItem("French Fries", 1.4, "갓 튀긴 신선한 감자튀김"));
                 }
-                default -> System.out.println("없는 메뉴입니다");
+
             }
 
         }
