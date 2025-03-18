@@ -16,8 +16,7 @@ public class Kiosk {
 
 
     public void start() {
-        Menu menu = new Menu("Burger");
-        menuList.add(menu);
+        menuList.add(new Menu("Burger"));
         menuList.add(new Menu("Drink"));
         menuList.add(new Menu("Dessert"));
         while (flag) {
@@ -31,18 +30,22 @@ public class Kiosk {
             int select = sc.nextInt();
 
             switch (select) {
+
                 case 0 -> {
                     System.out.println("프로그램을 종료합니다.");
                     flag = false;
                 }
                 case 1 -> {
                     Menu burger = menuList.get(0);
-                    System.out.println("선택메뉴 : 1. " + burger.getCategory());
+                    System.out.println("선택메뉴 : 1. " +  menuList.get(0).getCategory());
                     List<MenuItem> menuItem = burger.getMenuItems();
                     for (int i = 0; i < menuItem.size(); i++) {
                         MenuItem burgerItem = menuItem.get(i);
                         System.out.println((i + 1) + ". " + burgerItem.getName() + "| W " + burgerItem.getPrice() + " | " + burgerItem.getExplain());
                     }
+                    int choose = sc.nextInt();
+                    System.out.println(menuItem.get(choose-1).getName()+ " 선택하셧습니다.");
+
                 }
                 case 2 -> {
                     System.out.println("선택메뉴 : 2. " + menuList.get(1).getCategory());
@@ -51,6 +54,8 @@ public class Kiosk {
                         MenuItem burgerItem = menuItem.get(i);
                         System.out.println((i + 1) + ". " + burgerItem.getName() + "| W " + burgerItem.getPrice() + " | " + burgerItem.getExplain());
                     }
+                    int choose = sc.nextInt();
+                    System.out.println(menuItem.get(choose-1).getName()+ " 선택하셧습니다.");
                 }
                 case 3 -> {
                     Menu burger = menuList.get(2);
@@ -60,6 +65,8 @@ public class Kiosk {
                         MenuItem burgerItem = menuItem.get(i);
                         System.out.println((i + 1) + ". " + burgerItem.getName() + "| W " + burgerItem.getPrice() + " | " + burgerItem.getExplain());
                     }
+                    int choose = sc.nextInt();
+                    System.out.println(menuItem.get(choose-1).getName()+ " 선택하셧습니다.");
                 }
                 default -> {
                     try{
@@ -72,8 +79,20 @@ public class Kiosk {
                 }
 
             }
+            int choose = sc.nextInt();
+            List<MenuItem> menuItem = menuList.get(choose).getMenuItems();
 
+            if(choose == 0){
+                break;
+            }
+            if(choose > menuItem.size()){
+                throw new IllegalArgumentException("잘못된 입력");
+            }
+            // 입력 받은 숫자 인덱스로 활용하여 접근
+
+
+            }
         }
     }
-}
+
 
